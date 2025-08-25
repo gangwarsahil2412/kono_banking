@@ -5,6 +5,7 @@ const routes =[{
     path:'/auth',
     route:AuthRoute
 }]
+
 routes.forEach((cur)=>{
     router.use(cur.path,cur.route)
 })

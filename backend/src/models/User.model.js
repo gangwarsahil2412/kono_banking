@@ -20,7 +20,7 @@ const schema = new mongoose.Schema({
     ac_type:{
         type:String,
         required:true,
-        enum:['saving','current'],
+        enum:['saving','currunt'],
         default:'saving'
     }
 },{
