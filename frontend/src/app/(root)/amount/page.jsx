@@ -2,7 +2,7 @@
 import HeaderName from '@/components/HeaderName'
 import React, { Suspense, useState } from 'react'
 
-import AddAmountModel from '@/components/Amount/AddAmountModal';
+import AddAmountModel from '@/components/Amount/AddAmountModel';
 import { useMainContext } from '@/context/MainContext'
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import AddAccountModal from './+__(component)/AddAccountModal';

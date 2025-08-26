@@ -13,32 +13,32 @@ const HomePage=()=>{
   const {user} = useMainContext()
 
 
-  // const dashboard_data = [
-  //   {
-  //     title:"Amount",
-  //     "Icon":<BsCoin className="text-6xl text-yellow-500" />,
-  //     "value":`₹${user.account_no.map((cur)=>cur.amount).reduce((pre,cur)=>pre+cur)}`,
-  //     link:'/amount'
-  //   },
-  //   {
-  //     title:"FD Amount",
-  //     "Icon":<RiCoinsLine className="text-6xl text-rose-700" /> ,
-  //     "value":`₹${user.fd_amount}`,
-  //     link:"/fd-amount"
-  //   },
-  //   {
-  //     title:"ATM Cards",
-  //     "Icon":<IoCardSharp className="text-6xl text-black" />,
-  //     "value":`${user?.atms?.length ??0}`,
-  //     link:'/atm-cards'
-  //   }
-  // ]
+  const dashboard_data = [
+     {
+       title:"Amount",
+       "Icon":<BsCoin className="text-6xl text-yellow-500" />,
+      "value":`₹${user.amount}`,
+      link:'/amount'
+     },
+     {
+       title:"FD Amount",
+      "Icon":<RiCoinsLine className="text-6xl text-rose-700" /> ,
+      "value":`₹${user.fd_amount}`,
+      link:"/fd-amount"
+     },
+     {
+       title:"ATM Cards",
+       "Icon":<IoCardSharp className="text-6xl text-black" />,
+       "value":`${user?.atms?.length ??0}`,
+       link:'/atm-cards'
+    }
+   ]
 
 
   return <>
   <div className="py-10 flex flex-col gap-y-4 " >
   <HeaderName/>
-      {/* <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-x-3">
+      { <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-x-3">
 
    
     {
@@ -46,7 +46,7 @@ const HomePage=()=>{
         return  <DashboardCard data={cur} key={i} />
       })
     }
-       </div> */}
+       </div> }
     
   </div>
   </>
