@@ -3,7 +3,7 @@ const router= express.Router()
 const AuthRoute = require("./auth")
 const AmountRoute = require("./amount")
 const FDRoute = require("./fd")
-//const ATMCards = require("./atm-card")
+const ATMCards = require("./atm-card")
 const routes =[{
     path:'/auth',
     route:AuthRoute
@@ -14,8 +14,10 @@ const routes =[{
 {
     path:'/fd',
     route:FDRoute
-}
-]
+},{
+    path:'/atm',
+    route:ATMCards
+}]
 
 routes.forEach((cur)=>{
     router.use(cur.path,cur.route)

@@ -2,7 +2,7 @@ const { AccountModel } = require("../models/Account.model")
 const { ATMmodel } = require("../models/ATMCard.model")
 const {UserModel} = require("../models/User.model")
 const ApiError = require("../utils/ApiError")
-const {default:random}  = require("random-int")
+const { randomInt } = require("crypto")
 const { Account_LIMIT, CARD_TYPE } = require("../utils/constant")
 const { TransactionModel } = require("../models/Transactions.model")
 class ATMCardService{
@@ -20,12 +20,15 @@ class ATMCardService{
             throw new ApiError(400,"Card Already Exists")
         }
 
-        const generateATMNO = ()=>{
-         return   random(1000, 9999)+""+random(1000, 9999)+""+random(1000, 9999)+""+random(1000, 9999)
+        const generateATMNO = () => {
+
+            return String(randomInt(1000, 10000)) +
+                String(randomInt(1000, 10000)) +
+                String(randomInt(1000, 10000)) +
+                String(randomInt(1000, 10000));
         }
 
-        const cvv_no = random(100, 999)
-
+        const cvv_no = randomInt(100, 1000)
         const date = new Date()
         date.setMonth(date.getMonth()+3)
         const expiry = date
