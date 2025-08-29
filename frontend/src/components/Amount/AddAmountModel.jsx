@@ -47,7 +47,7 @@ export default function AddAmountModel({id}) {
      const options = {
       key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID, // Enter the Key ID generated from the Dashboard
       amount: (values.amount*100).toString(),
-      currency: 'INR',
+      currency: "INR",
       name: "CBI Bank",
       description: "Add Money Transaction",
       callback_url: razorpayCallBackUrl(data.txn_id),

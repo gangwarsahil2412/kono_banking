@@ -1,7 +1,7 @@
 "use client";
 import CustomAuthButton from '@/components/reuseable/CustomAuthButton';
 import { useMainContext } from '@/context/MainContext';
-import { axiosClient } from '../../../../utils/AxiosClient';
+import { axiosClient } from '@/utils/AxiosClient';
 import { Dialog, Transition } from '@headlessui/react'
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { Fragment, useState } from 'react'

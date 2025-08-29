@@ -7,8 +7,6 @@ const crypto = require("crypto")
 class AmountService{
 
     static async addMoney(body,user){
- 
-
       const transaction=  await TransactionModel.create({
             account:body.account_no,
             user:user,
@@ -22,10 +20,6 @@ class AmountService{
             receipt: transaction._id
         };
         const order = await NewRazorpay.orders.create(options)
-
-
-
-
         return {
            order_id:order.id,
            txn_id:transaction._id

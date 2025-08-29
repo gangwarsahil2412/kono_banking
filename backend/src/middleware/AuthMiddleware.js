@@ -3,7 +3,6 @@ const JWTService = require("../utils/JwtService")
 
 const AuthMiddleware  = (req,res,next)=>{
     try {
-
         const headers = req.headers['authorization'] ||''
         if(!headers || !headers.startsWith("Bearer ")){
             throw new ApiError(401,"Please Login First")
